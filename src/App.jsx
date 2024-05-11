@@ -62,13 +62,6 @@ function App() {
 
   return (
     <>
-     
-      <Asa asaValue={asaValue} setAsaValue={setAsaValue} />
-      <Sex sex={sex} setSex={setSex} />
-      <Weight weight={weight} setWeight={setWeight} />
-      <Htc htcValue={htcValue} setHtcValue={setHtcValue} />
-      <OperationScale scale={scale} setScale={setScale} />
-      <Fasting fastingTime={fastingTime} setFastingTime={setFastingTime} />
       <h3>Tolere edilebilir kan kaybı={Tekk}</h3>
       <Table
         fluidDeficitPerHour={fluidDeficitPerHour}
@@ -76,6 +69,13 @@ function App() {
         operationSeverity={operationSeverity}
         totalFluid={totalFluid}
       />
+      <Asa asaValue={asaValue} setAsaValue={setAsaValue} />
+      <Sex sex={sex} setSex={setSex} />
+      <Weight weight={weight} setWeight={setWeight} />
+      <Htc htcValue={htcValue} setHtcValue={setHtcValue} />
+      <OperationScale scale={scale} setScale={setScale} />
+      <Fasting fastingTime={fastingTime} setFastingTime={setFastingTime} />
+     
     </>
   );
 }
