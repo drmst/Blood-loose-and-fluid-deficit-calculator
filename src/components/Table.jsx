@@ -19,7 +19,7 @@ const Table = ({
         <tbody>
           <tr>
             <td>Açlık</td>
-            <td>{oneNightLiquidDeficit / 2}</td>""
+            <td>{oneNightLiquidDeficit / 2}</td>
             <td>{oneNightLiquidDeficit / 4}</td>
             <td>{oneNightLiquidDeficit / 4}</td>
           </tr>
