@@ -1,4 +1,15 @@
 const OperationScale = ({ scale, setScale }) => {
+  const handleChange = (e) => {
+    let value = parseInt(e.target.value);
+    if (isNaN(value) || value < 1) {
+      value = 1;
+    } else if (value > 10) {
+      value = 10;
+    }else{
+      value=parseInt(e.target.value)
+    }
+    setScale(value);
+  };
   return (
     <>
       <br />
@@ -10,9 +21,7 @@ const OperationScale = ({ scale, setScale }) => {
             min="1"
             max="10"
             value={scale}
-            onChange={(e) => {
-              setScale(e.target.value);
-            }}
+            onChange={handleChange}
           />
         </div>
         <div className="operation-slider-container">

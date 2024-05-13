@@ -1,4 +1,15 @@
 const Weight = ({ weight, setWeight }) => {
+  const handleChange = (e) => {
+    let value = parseInt(e.target.value);
+    if (isNaN(value) || value < 3) {
+      value = 3;
+    } else if (value > 120) {
+      value = 120;
+    }else{
+      value=parseInt(e.target.value)
+    }
+    setWeight(value);
+  };
   return (
     <>
       <label htmlFor="weight">
@@ -9,9 +20,7 @@ const Weight = ({ weight, setWeight }) => {
             min="3"
             max="120"
             value={weight}
-            onChange={(e) => {
-              setWeight(e.target.value);
-            }}
+            onChange={handleChange}
           />
         </div>
         <div className="weight-slider-container">

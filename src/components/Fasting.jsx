@@ -1,6 +1,15 @@
-import React from "react";
-
 const Fasting = ({ fastingTime, setFastingTime }) => {
+  const handleChange = (e) => {
+    let value = parseInt(e.target.value);
+    if (isNaN(value) || value < 6) {
+      value = 6;
+    } else if (value > 12) {
+      value = 12;
+    }else{
+      value=parseInt(e.target.value)
+    }
+    setFastingTime(value);
+  };
   return (
     <>
       <label htmlFor="fasting">
@@ -11,9 +20,7 @@ const Fasting = ({ fastingTime, setFastingTime }) => {
             min="6"
             max="12"
             value={fastingTime}
-            onChange={(e) => {
-              setFastingTime(e.target.value);
-            }}
+            onChange={handleChange}
           />
         </div>
         <div className="fasting-slider-container">
