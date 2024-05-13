@@ -24,7 +24,7 @@ const Weight = ({ weight, setWeight }) => {
           />
         </div>
         <div className="weight-slider-container">
-          <h3>1</h3>
+          <h3>3</h3>
           <input
           className="weight-slider"
             type="range"
