@@ -37,6 +37,10 @@ td {
     align-items: center;
 }
 
+.asa-container h3{
+    margin: 3px 0;
+}
+
 .asa-container label {
     margin: 5px;
 }
@@ -111,4 +115,5 @@ td {
 .sex-container{
     display: flex;
     justify-content: space-between;
+    
 }
