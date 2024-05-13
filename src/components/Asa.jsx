@@ -1,6 +1,6 @@
 const Asa = ({ asaValue, setAsaValue }) => {
   return (
-    <>
+    <div className="asa-container">
       <h3>ASA:</h3>
       <form>
         <label htmlFor="asa1">
@@ -43,7 +43,7 @@ const Asa = ({ asaValue, setAsaValue }) => {
           ASA 3
         </label>
       </form>
-    </>
+    </div>
   );
 };
 

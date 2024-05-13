@@ -1,19 +1,22 @@
+import "../App.css";
+
 const Table = ({
   fluidDeficitPerHour,
   oneNightLiquidDeficit,
   operationSeverity,
-  totalFluid
+  totalFluid,
 }) => {
   return (
-    <>
-    <h3>Sıvı Açığı:</h3>
+    <div className="table-container">
+      <h3 className="table-header">Sıvı Açığı:</h3>
       <table>
-        <thead>
+        <thead className="thead">
           <tr>
             <th></th>
             <th>1. Saat</th>
             <th>2. Saat</th>
             <th>3. Saat</th>
+            <th>4. Saat</th>
           </tr>
         </thead>
         <tbody>
@@ -22,15 +25,18 @@ const Table = ({
             <td>{oneNightLiquidDeficit / 2}</td>
             <td>{oneNightLiquidDeficit / 4}</td>
             <td>{oneNightLiquidDeficit / 4}</td>
+            <td>0</td>
           </tr>
           <tr>
             <td>İdame</td>
             <td>{fluidDeficitPerHour}</td>
             <td>{fluidDeficitPerHour}</td>
             <td>{fluidDeficitPerHour}</td>
+            <td>{fluidDeficitPerHour}</td>
           </tr>
           <tr>
             <td>Ameliyat B.</td>
+            <td>{operationSeverity}</td>
             <td>{operationSeverity}</td>
             <td>{operationSeverity}</td>
             <td>{operationSeverity}</td>
@@ -42,11 +48,11 @@ const Table = ({
             <td>{totalFluid[0]}</td>
             <td>{totalFluid[1]}</td>
             <td>{totalFluid[2]}</td>
+            <td>{totalFluid[3]}</td>
           </tr>
         </tfoot>
       </table>
-   
-    </>
+    </div>
   );
 };
 

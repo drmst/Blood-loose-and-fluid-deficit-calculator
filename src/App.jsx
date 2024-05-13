@@ -43,11 +43,12 @@ function App() {
     } else if (weight > 20) setFluidDeficitPerHour(40 + Number(weight));
     setOneNightLiquidDeficit(fastingTime * fluidDeficitPerHour);
     setOperationSeverity(weight * scale);
-    setTotalFluid([ oneNightLiquidDeficit / 2 + fluidDeficitPerHour + operationSeverity,
-    oneNightLiquidDeficit / 4 + fluidDeficitPerHour + operationSeverity,
-    oneNightLiquidDeficit / 4 + fluidDeficitPerHour + operationSeverity]
-     
-    );
+    setTotalFluid([
+      oneNightLiquidDeficit / 2 + fluidDeficitPerHour + operationSeverity,
+      oneNightLiquidDeficit / 4 + fluidDeficitPerHour + operationSeverity,
+      oneNightLiquidDeficit / 4 + fluidDeficitPerHour + operationSeverity,
+      fluidDeficitPerHour + operationSeverity,
+    ]);
   }, [
     weight,
     cins,
@@ -61,8 +62,13 @@ function App() {
   ]);
 
   return (
-    <>
-      <h3>Tolere edilebilir kan kaybı={Tekk}</h3>
+    <div className="container">
+      <h1 className="header">Kan Kaybı ve Sıvı Açığı Hesaplama Aracı</h1>
+      <div className="tekk-container">
+        <h3 className="tekk">Tolere edilebilir kan kaybı:</h3>
+        <h3>{Tekk}</h3>
+      </div>
+
       <Table
         fluidDeficitPerHour={fluidDeficitPerHour}
         oneNightLiquidDeficit={oneNightLiquidDeficit}
@@ -71,12 +77,11 @@ function App() {
       />
       <Asa asaValue={asaValue} setAsaValue={setAsaValue} />
       <Sex sex={sex} setSex={setSex} />
-      <Weight weight={weight} setWeight={setWeight} />
       <Htc htcValue={htcValue} setHtcValue={setHtcValue} />
+      <Weight weight={weight} setWeight={setWeight} />
       <OperationScale scale={scale} setScale={setScale} />
       <Fasting fastingTime={fastingTime} setFastingTime={setFastingTime} />
-     
-    </>
+    </div>
   );
 }
 

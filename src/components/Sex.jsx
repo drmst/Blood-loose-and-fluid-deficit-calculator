@@ -2,8 +2,8 @@ const Sex = ({ sex, setSex }) => {
   return (
     <>
       <h3>Cinsiyet:</h3>
-      <form>
-        <div>
+      <form className="sex-container">
+        <div className="adult">
           <label htmlFor="man">
             <input
               type="radio"
@@ -31,7 +31,7 @@ const Sex = ({ sex, setSex }) => {
             Kadın
           </label>
         </div>
-        <div>
+        <div className="children">
           <label htmlFor="child">
             <input
               type="radio"
