@@ -15,7 +15,7 @@ const OperationScale = ({ scale, setScale }) => {
       <br />
       <label htmlFor="operation-scale">
         <div className="operation-scale-header">
-          <h3> Ameliyat Büyüklüğü:</h3>
+          <h3 className="scale-text"> Ameliyat Büyüklüğü:</h3>
           <input
             type="number"
             min="1"

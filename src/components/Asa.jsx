@@ -1,7 +1,7 @@
 const Asa = ({ asaValue, setAsaValue }) => {
   return (
     <div className="asa-container">
-      <h3>ASA:</h3>
+      <h3 className="asa-text">ASA:</h3>
       <form>
         <label htmlFor="asa1">
           <input
@@ -13,7 +13,7 @@ const Asa = ({ asaValue, setAsaValue }) => {
             onChange={(e) => {
               setAsaValue(Number(e.target.value));
             }}
-          />{" "}
+          />
           ASA 1
         </label>
         <label htmlFor="asa2">
@@ -26,7 +26,7 @@ const Asa = ({ asaValue, setAsaValue }) => {
             onChange={(e) => {
               setAsaValue(Number(e.target.value));
             }}
-          />{" "}
+          />
           ASA 2
         </label>
         <label htmlFor="asa3">

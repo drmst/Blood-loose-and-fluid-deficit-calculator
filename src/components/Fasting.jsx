@@ -14,7 +14,7 @@ const Fasting = ({ fastingTime, setFastingTime }) => {
     <>
       <label htmlFor="fasting">
         <div className="fasting-header">
-          <h3> Açlık Süresi:</h3>
+          <h3 className="fasting-text"> Açlık Süresi:</h3>
           <input
             type="number"
             min="6"

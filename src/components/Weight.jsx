@@ -14,7 +14,7 @@ const Weight = ({ weight, setWeight }) => {
     <>
       <label htmlFor="weight">
         <div className="weight-header">
-          <h3> Hastanın Kilosu:</h3>
+          <h3 className="weight-text"> Hastanın Kilosu:</h3>
           <input
             type="number"
             min="3"

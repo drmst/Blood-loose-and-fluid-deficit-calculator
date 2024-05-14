@@ -14,7 +14,7 @@ const Htc = ({ htcValue, setHtcValue }) => {
     <>
       <label htmlFor="htc">
         <div className="htc-header">
-          <h3> Hastanın Hematokriti(HTC):</h3>
+          <h3 className="htc-text"> Hastanın Hematokriti(HTC):</h3>
           <input
             type="number"
             min="20"

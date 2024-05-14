@@ -35,7 +35,7 @@ function App() {
 
   useEffect(() => {
     const calculatedTekk = (weight * cins * (htcValue - asaValue) * 3) / 100;
-    setTekk(calculatedTekk > 0 ? calculatedTekk : "0, Doktora haber ver!");
+    setTekk(calculatedTekk > 0 ? calculatedTekk : "0 !!!");
     if (weight <= 10) {
       setFluidDeficitPerHour(weight * 4);
     } else if (weight > 10 && weight <= 20) {
@@ -65,7 +65,7 @@ function App() {
     <div className="container">
       <h1 className="header">Kan Kaybı ve Sıvı Açığı Hesaplama Aracı</h1>
       <div className="tekk-container">
-        <h3 className="tekk">Tolere edilebilir kan kaybı:</h3>
+        <h3 className="tekk-text">Tolere edilebilir kan kaybı:</h3>
         <h3>{Tekk}</h3>
       </div>
 
