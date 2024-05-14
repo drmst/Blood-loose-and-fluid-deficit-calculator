@@ -260,3 +260,21 @@ td {
     font-size: 0.7rem;
     color: grey;
 }
+
+@media only screen and (max-width: 400px) {
+    html {
+        font-size: 14px;
+    }
+  }
+
+  @media only screen and (max-width: 350px) {
+    html {
+        font-size: 13px;
+    }
+  }
+
+  @media only screen and (max-width: 300px) {
+    html {
+        font-size: 12px;
+    }
+  }
