@@ -76,6 +76,8 @@ function App() {
       <Weight weight={weight} setWeight={setWeight} />
       <OperationScale scale={scale} setScale={setScale} />
       <Fasting fastingTime={fastingTime} setFastingTime={setFastingTime} />
+      <p className="reminder">Dr. Mesut Öztürk tarafından hazırlanmıştır.
+        <br/>Bilgi amaçlıdır. Hastaya göre tedavi kararı verilmelidir</p>
     </div>
   );
 }

@@ -254,3 +254,9 @@ td {
     margin: 0 10px 0 0;
     font-size: 1rem;
 }
+
+.reminder{
+    text-align: center;
+    font-size: 0.7rem;
+    color: grey;
+}
