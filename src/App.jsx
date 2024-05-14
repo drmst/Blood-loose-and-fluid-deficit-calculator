@@ -20,7 +20,7 @@ function App() {
   const [oneNightLiquidDeficit, setOneNightLiquidDeficit] = useState(0);
   const [fastingTime, setFastingTime] = useState(6);
   const [operationSeverity, setOperationSeverity] = useState(1);
-  const [totalFluid, setTotalFluid] = useState([]);
+
 
   let cins = 0;
   if (sex === "Erkek") {
@@ -43,12 +43,7 @@ function App() {
     } else if (weight > 20) setFluidDeficitPerHour(40 + Number(weight));
     setOneNightLiquidDeficit(fastingTime * fluidDeficitPerHour);
     setOperationSeverity(weight * scale);
-    setTotalFluid([
-      oneNightLiquidDeficit / 2 + fluidDeficitPerHour + operationSeverity,
-      oneNightLiquidDeficit / 4 + fluidDeficitPerHour + operationSeverity,
-      oneNightLiquidDeficit / 4 + fluidDeficitPerHour + operationSeverity,
-      fluidDeficitPerHour + operationSeverity,
-    ]);
+    
   }, [
     weight,
     cins,
@@ -73,7 +68,7 @@ function App() {
         fluidDeficitPerHour={fluidDeficitPerHour}
         oneNightLiquidDeficit={oneNightLiquidDeficit}
         operationSeverity={operationSeverity}
-        totalFluid={totalFluid}
+        
       />
       <Asa asaValue={asaValue} setAsaValue={setAsaValue} />
       <Sex sex={sex} setSex={setSex} />

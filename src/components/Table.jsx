@@ -4,7 +4,7 @@ const Table = ({
   fluidDeficitPerHour,
   oneNightLiquidDeficit,
   operationSeverity,
-  totalFluid,
+ 
 }) => {
   return (
     <div className="table-container">
@@ -22,33 +22,47 @@ const Table = ({
         <tbody>
           <tr>
             <td>Açlık</td>
-            <td>{oneNightLiquidDeficit / 2}</td>
-            <td>{oneNightLiquidDeficit / 4}</td>
-            <td>{oneNightLiquidDeficit / 4}</td>
+            <td>{Math.floor(oneNightLiquidDeficit / 2)}</td>
+            <td>{Math.floor(oneNightLiquidDeficit / 4)}</td>
+            <td>{Math.floor(oneNightLiquidDeficit / 4)}</td>
             <td>0</td>
           </tr>
           <tr>
             <td>İdame</td>
-            <td>{fluidDeficitPerHour}</td>
-            <td>{fluidDeficitPerHour}</td>
-            <td>{fluidDeficitPerHour}</td>
-            <td>{fluidDeficitPerHour}</td>
+            <td>{Math.floor(fluidDeficitPerHour)}</td>
+            <td>{Math.floor(fluidDeficitPerHour)}</td>
+            <td>{Math.floor(fluidDeficitPerHour)}</td>
+            <td>{Math.floor(fluidDeficitPerHour)}</td>
           </tr>
           <tr>
             <td>Ameliyat B.</td>
-            <td>{operationSeverity}</td>
-            <td>{operationSeverity}</td>
-            <td>{operationSeverity}</td>
-            <td>{operationSeverity}</td>
+            <td>{Math.floor(operationSeverity)}</td>
+            <td>{Math.floor(operationSeverity)}</td>
+            <td>{Math.floor(operationSeverity)}</td>
+            <td>{Math.floor(operationSeverity)}</td>
           </tr>
         </tbody>
         <tfoot>
           <tr>
             <td>Toplam</td>
-            <td>{totalFluid[0]}</td>
-            <td>{totalFluid[1]}</td>
-            <td>{totalFluid[2]}</td>
-            <td>{totalFluid[3]}</td>
+            <td>
+              {Math.floor(oneNightLiquidDeficit / 2) +
+                Math.floor(fluidDeficitPerHour) +
+                Math.floor(operationSeverity)}
+            </td>
+            <td>
+              {Math.floor(oneNightLiquidDeficit / 4) +
+                Math.floor(fluidDeficitPerHour) +
+                Math.floor(operationSeverity)}
+            </td>
+            <td>
+              {Math.floor(oneNightLiquidDeficit / 4) +
+                Math.floor(fluidDeficitPerHour) +
+                Math.floor(operationSeverity)}
+            </td>
+            <td>
+              {Math.floor(fluidDeficitPerHour) + Math.floor(operationSeverity)}
+            </td>
           </tr>
         </tfoot>
       </table>
