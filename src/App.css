@@ -44,16 +44,12 @@ html {
     padding: 0 3px;
 }
 
-
-
 .tekk-error-container {
     display: flex;
     justify-content: center;
     background-color: rgba(212, 44, 69, 0.842);
     margin: 3px 0;
     border-radius: 5px;
-
-
 }
 
 .tekk-error {
@@ -62,8 +58,6 @@ html {
     font-size: 1rem;
     padding: 3px;
     border-radius: 5px;
-
-
 }
 
 .table-header {
@@ -90,7 +84,6 @@ td {
     justify-content: center;
     margin: 3px 0;
     border-radius: 5px;
-
 }
 
 .table-error {
@@ -278,8 +271,6 @@ td {
 
 .sex-container {
     display: flex;
-
-
 }
 
 .sex-text {

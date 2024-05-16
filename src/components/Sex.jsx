@@ -15,7 +15,7 @@ const Sex = ({ sex, setSex }) => {
                 setSex(e.target.value);
               }}
             />
-            Erkek
+            Erkek👨
           </label>
           <label htmlFor="woman">
             <input
@@ -28,7 +28,7 @@ const Sex = ({ sex, setSex }) => {
                 setSex(e.target.value);
               }}
             />
-            Kadın
+            Kadın👩
           </label>
         </div>
         <div className="children gender">
@@ -43,7 +43,7 @@ const Sex = ({ sex, setSex }) => {
                 setSex(e.target.value);
               }}
             />
-            Çocuk
+            Çocuk🧒
           </label>
           <label htmlFor="newBorn">
             <input
@@ -56,7 +56,7 @@ const Sex = ({ sex, setSex }) => {
                 setSex(e.target.value);
               }}
             />
-            Yeni Doğan
+            Yeni Doğan👶
           </label>
         </div>
       </form>
