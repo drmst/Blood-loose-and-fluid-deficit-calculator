@@ -44,6 +44,28 @@ html {
     padding: 0 3px;
 }
 
+
+
+.tekk-error-container {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(212, 44, 69, 0.842);
+    margin: 3px 0;
+    border-radius: 5px;
+
+
+}
+
+.tekk-error {
+    color: red;
+    text-align: center;
+    font-size: 1rem;
+    padding: 3px;
+    border-radius: 5px;
+
+
+}
+
 .table-header {
     font-weight: 600;
     margin: 0px 5px 0 0;
@@ -62,6 +84,22 @@ td {
     border-radius: 3px;
 }
 
+.table-error-container {
+    background-color: rgba(212, 44, 69, 0.842);
+    display: flex;
+    justify-content: center;
+    margin: 3px 0;
+    border-radius: 5px;
+
+}
+
+.table-error{
+    color: red;
+    text-align:center;
+    font-size: 1rem;
+    padding: 3px;
+    border-radius: 5px;
+}
 .asa-container {
     display: flex;
     justify-content: space-between;
@@ -255,7 +293,7 @@ td {
     font-size: 1rem;
 }
 
-.reminder{
+.reminder {
     text-align: center;
     font-size: 0.7rem;
     color: grey;
@@ -265,16 +303,16 @@ td {
     html {
         font-size: 14px;
     }
-  }
+}
 
-  @media only screen and (max-width: 350px) {
+@media only screen and (max-width: 350px) {
     html {
         font-size: 13px;
     }
-  }
+}
 
-  @media only screen and (max-width: 300px) {
+@media only screen and (max-width: 300px) {
     html {
         font-size: 12px;
     }
-  }
+}

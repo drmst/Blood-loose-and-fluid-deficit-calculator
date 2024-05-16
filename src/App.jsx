@@ -10,6 +10,8 @@ import Weight from "./components/Weight";
 import { useEffect, useState } from "react";
 
 function App() {
+  const [isTekkCorrect, setIsTekkCorrect] = useState(true);
+  const [isTableCorrect, setIsTableCorrect] = useState(false);
   const [Tekk, setTekk] = useState(0);
   const [weight, setWeight] = useState(70);
   const [sex, setSex] = useState("Erkek");
@@ -20,7 +22,6 @@ function App() {
   const [oneNightLiquidDeficit, setOneNightLiquidDeficit] = useState(0);
   const [fastingTime, setFastingTime] = useState(6);
   const [operationSeverity, setOperationSeverity] = useState(1);
-
 
   let cins = 0;
   if (sex === "Erkek") {
@@ -43,7 +44,6 @@ function App() {
     } else if (weight > 20) setFluidDeficitPerHour(40 + Number(weight));
     setOneNightLiquidDeficit(fastingTime * fluidDeficitPerHour);
     setOperationSeverity(weight * scale);
-    
   }, [
     weight,
     cins,
@@ -59,25 +59,50 @@ function App() {
   return (
     <div className="container">
       <h1 className="header">Kan Kaybı ve Sıvı Açığı Hesaplama Aracı</h1>
-      <div className="tekk-container">
-        <h3 className="tekk-text">Tolere edilebilir kan kaybı:</h3>
-        <h3>{Tekk}</h3>
-      </div>
-
-      <Table
-        fluidDeficitPerHour={fluidDeficitPerHour}
-        oneNightLiquidDeficit={oneNightLiquidDeficit}
-        operationSeverity={operationSeverity}
+      {isTekkCorrect ? (
+        <div className="tekk-container">
+          <h3 className="tekk-text">Tolere edilebilir kan kaybı:</h3>
+          <h3>{Tekk}</h3>
+        </div>
+      ) : (
+        <div className="tekk-error-container">
+          <p className="tekk-error">
+            Lütfen değerleri belirtilen aralıklarda giriniz !!!
+          </p>
+        </div>
+      )}
+      {isTableCorrect ? (
+        <Table
+          fluidDeficitPerHour={fluidDeficitPerHour}
+          oneNightLiquidDeficit={oneNightLiquidDeficit}
+          operationSeverity={operationSeverity}
+        />
+      ) : (
+        <div className="table-error-container">
+<p className="table-error">  Lütfen değerleri belirtilen aralıklarda giriniz !!!</p>
+        </div>
         
-      />
+      )}
+
       <Asa asaValue={asaValue} setAsaValue={setAsaValue} />
       <Sex sex={sex} setSex={setSex} />
-      <Htc htcValue={htcValue} setHtcValue={setHtcValue} />
-      <Weight weight={weight} setWeight={setWeight} />
+      <Htc
+        htcValue={htcValue}
+        setHtcValue={setHtcValue}
+        setIsTekkCorrect={setIsTekkCorrect}
+      />
+      <Weight
+        weight={weight}
+        setWeight={setWeight}
+        setIsTekkCorrect={setIsTekkCorrect}
+      />
       <OperationScale scale={scale} setScale={setScale} />
       <Fasting fastingTime={fastingTime} setFastingTime={setFastingTime} />
-      <p className="reminder">Dr. Mesut Öztürk tarafından hazırlanmıştır.
-        <br/>Bilgi amaçlıdır. Hastaya göre tedavi kararı verilmelidir</p>
+      <p className="reminder">
+        Dr. Mesut Öztürk tarafından hazırlanmıştır.
+        <br />
+        Bilgi amaçlıdır. Hastaya göre tedavi kararı verilmelidir
+      </p>
     </div>
   );
 }
