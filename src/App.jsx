@@ -130,7 +130,7 @@ function App() {
       <p className="reminder">
         Dr. Mesut Öztürk tarafından hazırlanmıştır.
         <br />
-        Bilgi amaçlıdır. Hastaya göre tedavi kararı verilmelidir
+        Bilgi amaçlıdır. Hastaya göre tedavi kararı verilmelidir.
       </p>
     </div>
   );
