@@ -77,7 +77,7 @@ function App() {
       {isTekkCorrect ? (
         <div className="tekk-container">
           <h3 className="tekk-text">Tolere edilebilir kan kaybı:</h3>
-          <h3>{Tekk}</h3>
+          <h3>{Math.floor(Tekk)}</h3>
         </div>
       ) : (
         <div className="tekk-error-container">
