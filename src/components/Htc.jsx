@@ -1,4 +1,4 @@
-const Htc = ({ htcValue, setHtcValue, setIsHtcCorrect }) => {
+const Htc = ({ htcValue, setHtcValue, setIsHtcCorrect,isHtcCorrect }) => {
   const handleChange = (e) => {
     let value = parseInt(e.target.value);
     if (isNaN(value) || value < 20 || value > 60) {
@@ -15,6 +15,7 @@ const Htc = ({ htcValue, setHtcValue, setIsHtcCorrect }) => {
         <div className="htc-header">
           <h3 className="htc-text"> Hastanın Hematokriti(HTC):</h3>
           <input
+           className={isHtcCorrect ? "" : "input-error"}
             type="number"
             min="20"
             max="60"

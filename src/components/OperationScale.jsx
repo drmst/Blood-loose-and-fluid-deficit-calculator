@@ -1,4 +1,4 @@
-const OperationScale = ({ scale, setScale, setIsScaleCorrect }) => {
+const OperationScale = ({ scale, setScale, setIsScaleCorrect,isScaleCorrect }) => {
   const handleChange = (e) => {
     let value = parseInt(e.target.value);
     if (isNaN(value) || value < 1 || value > 10) {
@@ -16,6 +16,7 @@ const OperationScale = ({ scale, setScale, setIsScaleCorrect }) => {
         <div className="operation-scale-header">
           <h3 className="scale-text"> Ameliyat Büyüklüğü:</h3>
           <input
+           className={isScaleCorrect ? "" : "input-error"}
             type="number"
             min="1"
             max="10"

@@ -1,4 +1,4 @@
-const Weight = ({ weight, setWeight, setIsWeightCorrect }) => {
+const Weight = ({ weight, setWeight, setIsWeightCorrect, isWeightCorrect }) => {
   const handleChange = (e) => {
     let value = parseInt(e.target.value);
     if (isNaN(value) || value < 3 || value > 120) {
@@ -15,6 +15,7 @@ const Weight = ({ weight, setWeight, setIsWeightCorrect }) => {
         <div className="weight-header">
           <h3 className="weight-text"> Hastanın Kilosu:</h3>
           <input
+            className={isWeightCorrect ? "" : "input-error"}
             type="number"
             min="3"
             max="120"

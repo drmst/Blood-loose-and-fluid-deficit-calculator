@@ -106,21 +106,26 @@ function App() {
         htcValue={htcValue}
         setHtcValue={setHtcValue}
         setIsHtcCorrect={setIsHtcCorrect}
+        isHtcCorrect={isHtcCorrect}
       />
       <Weight
+      
         weight={weight}
         setWeight={setWeight}
         setIsWeightCorrect={setIsWeightCorrect}
+        isWeightCorrect={isWeightCorrect}
       />
       <OperationScale
         scale={scale}
         setScale={setScale}
         setIsScaleCorrect={setIsScaleCorrect}
+        isScaleCorrect={isScaleCorrect}
       />
       <Fasting
         fastingTime={fastingTime}
         setFastingTime={setFastingTime}
         setIsFastingCorrect={setIsFastingCorrect}
+        isFastingCorrect={isFastingCorrect}
       />
       <p className="reminder">
         Dr. Mesut Öztürk tarafından hazırlanmıştır.

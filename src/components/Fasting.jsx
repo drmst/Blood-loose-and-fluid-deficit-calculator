@@ -1,4 +1,4 @@
-const Fasting = ({ fastingTime, setFastingTime, setIsFastingCorrect }) => {
+const Fasting = ({ fastingTime, setFastingTime, setIsFastingCorrect,isFastingCorrect }) => {
   const handleChange = (e) => {
     let value = parseInt(e.target.value);
     if (isNaN(value) || value < 6 || value > 12) {
@@ -12,10 +12,11 @@ const Fasting = ({ fastingTime, setFastingTime, setIsFastingCorrect }) => {
   };
   return (
     <>
-      <label htmlFor="fasting">
+ 
         <div className="fasting-header">
           <h3 className="fasting-text"> Açlık Süresi:</h3>
           <input
+       className={isFastingCorrect ? "" : "input-error"}
             type="number"
             min="6"
             max="12"
@@ -38,7 +39,7 @@ const Fasting = ({ fastingTime, setFastingTime, setIsFastingCorrect }) => {
           />
           <h3>12</h3>
         </div>
-      </label>
+
     </>
   );
 };
