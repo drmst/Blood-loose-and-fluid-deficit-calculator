@@ -128,10 +128,11 @@ function App() {
         isFastingCorrect={isFastingCorrect}
       />
       <p className="reminder">
-        Dr. Mesut Öztürk tarafından hazırlanmıştır.
+        Dr. Mesut Öztürk<a href="https://www.instagram.com/oztmesut/">(@oztmesut)</a> tarafından hazırlanmıştır.
         <br />
         Bilgi amaçlıdır. Hastaya göre tedavi kararı verilmelidir.
       </p>
+      
     </div>
   );
 }
