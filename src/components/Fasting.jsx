@@ -1,13 +1,13 @@
-const Fasting = ({ fastingTime, setFastingTime }) => {
+const Fasting = ({ fastingTime, setFastingTime, setIsFastingCorrect }) => {
   const handleChange = (e) => {
     let value = parseInt(e.target.value);
-    if (isNaN(value) || value < 6) {
-      value = 6;
-    } else if (value > 12) {
-      value = 12;
-    }else{
-      value=parseInt(e.target.value)
+    if (isNaN(value) || value < 6 || value > 12) {
+      setIsFastingCorrect(false);
+    } else {
+      setIsFastingCorrect(true);
+      value = parseInt(e.target.value);
     }
+
     setFastingTime(value);
   };
   return (
@@ -33,6 +33,7 @@ const Fasting = ({ fastingTime, setFastingTime }) => {
             value={fastingTime}
             onChange={(e) => {
               setFastingTime(e.target.value);
+              setIsFastingCorrect(true);
             }}
           />
           <h3>12</h3>

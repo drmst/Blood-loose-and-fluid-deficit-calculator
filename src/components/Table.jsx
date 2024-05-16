@@ -4,7 +4,6 @@ const Table = ({
   fluidDeficitPerHour,
   oneNightLiquidDeficit,
   operationSeverity,
- 
 }) => {
   return (
     <div className="table-container">

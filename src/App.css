@@ -93,13 +93,14 @@ td {
 
 }
 
-.table-error{
+.table-error {
     color: red;
-    text-align:center;
+    text-align: center;
     font-size: 1rem;
     padding: 3px;
     border-radius: 5px;
 }
+
 .asa-container {
     display: flex;
     justify-content: space-between;

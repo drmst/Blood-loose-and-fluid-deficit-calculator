@@ -11,7 +11,11 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [isTekkCorrect, setIsTekkCorrect] = useState(true);
-  const [isTableCorrect, setIsTableCorrect] = useState(false);
+  const [isTableCorrect, setIsTableCorrect] = useState(true);
+  const [isWeightCorrect, setIsWeightCorrect] = useState(true);
+  const [isHtcCorrect, setIsHtcCorrect] = useState(true);
+  const [isFastingCorrect, setIsFastingCorrect] = useState(true);
+  const [isScaleCorrect, setIsScaleCorrect] = useState(true);
   const [Tekk, setTekk] = useState(0);
   const [weight, setWeight] = useState(70);
   const [sex, setSex] = useState("Erkek");
@@ -44,6 +48,17 @@ function App() {
     } else if (weight > 20) setFluidDeficitPerHour(40 + Number(weight));
     setOneNightLiquidDeficit(fastingTime * fluidDeficitPerHour);
     setOperationSeverity(weight * scale);
+    if (isWeightCorrect && isHtcCorrect) {
+      setIsTekkCorrect(true);
+    } else {
+      setIsTekkCorrect(false);
+    }
+
+    if (isFastingCorrect && isScaleCorrect && isWeightCorrect) {
+      setIsTableCorrect(true);
+    } else {
+      setIsTableCorrect(false);
+    }
   }, [
     weight,
     cins,
@@ -79,9 +94,10 @@ function App() {
         />
       ) : (
         <div className="table-error-container">
-<p className="table-error">  Lütfen değerleri belirtilen aralıklarda giriniz !!!</p>
+          <p className="table-error">
+            Lütfen değerleri belirtilen aralıklarda giriniz !!!
+          </p>
         </div>
-        
       )}
 
       <Asa asaValue={asaValue} setAsaValue={setAsaValue} />
@@ -89,15 +105,23 @@ function App() {
       <Htc
         htcValue={htcValue}
         setHtcValue={setHtcValue}
-        setIsTekkCorrect={setIsTekkCorrect}
+        setIsHtcCorrect={setIsHtcCorrect}
       />
       <Weight
         weight={weight}
         setWeight={setWeight}
-        setIsTekkCorrect={setIsTekkCorrect}
+        setIsWeightCorrect={setIsWeightCorrect}
       />
-      <OperationScale scale={scale} setScale={setScale} />
-      <Fasting fastingTime={fastingTime} setFastingTime={setFastingTime} />
+      <OperationScale
+        scale={scale}
+        setScale={setScale}
+        setIsScaleCorrect={setIsScaleCorrect}
+      />
+      <Fasting
+        fastingTime={fastingTime}
+        setFastingTime={setFastingTime}
+        setIsFastingCorrect={setIsFastingCorrect}
+      />
       <p className="reminder">
         Dr. Mesut Öztürk tarafından hazırlanmıştır.
         <br />

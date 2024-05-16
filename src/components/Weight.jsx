@@ -1,13 +1,11 @@
-const Weight = ({ weight, setWeight,setIsTekkCorrect}) => {
+const Weight = ({ weight, setWeight, setIsWeightCorrect }) => {
   const handleChange = (e) => {
     let value = parseInt(e.target.value);
-    if (isNaN(value) || value < 3) {
-      setIsTekkCorrect(false);
-    } else if (value > 120) {
-      setIsTekkCorrect(false);
-    }else{
-      setIsTekkCorrect(true)
-      value=parseInt(e.target.value)
+    if (isNaN(value) || value < 3 || value > 120) {
+      setIsWeightCorrect(false);
+    } else {
+      setIsWeightCorrect(true);
+      value = parseInt(e.target.value);
     }
     setWeight(value);
   };
@@ -27,7 +25,7 @@ const Weight = ({ weight, setWeight,setIsTekkCorrect}) => {
         <div className="weight-slider-container">
           <h3>3</h3>
           <input
-          className="weight-slider"
+            className="weight-slider"
             type="range"
             id="weight"
             step="1"
@@ -36,7 +34,7 @@ const Weight = ({ weight, setWeight,setIsTekkCorrect}) => {
             value={weight}
             onChange={(e) => {
               setWeight(e.target.value);
-              setIsTekkCorrect(true);
+              setIsWeightCorrect(true);
             }}
           />
           <h3>120</h3>

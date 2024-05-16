@@ -1,12 +1,10 @@
-const Htc = ({ htcValue, setHtcValue,setIsTekkCorrect }) => {
+const Htc = ({ htcValue, setHtcValue, setIsHtcCorrect }) => {
   const handleChange = (e) => {
     let value = parseInt(e.target.value);
-    if (isNaN(value) || value < 20) {
-      setIsTekkCorrect(false)
-    } else if (value > 60) {
-      setIsTekkCorrect(false)
+    if (isNaN(value) || value < 20 || value > 60) {
+      setIsHtcCorrect(false);
     } else {
-      setIsTekkCorrect(true)
+      setIsHtcCorrect(true);
       value = parseInt(e.target.value);
     }
     setHtcValue(value);
@@ -36,7 +34,7 @@ const Htc = ({ htcValue, setHtcValue,setIsTekkCorrect }) => {
             step="1"
             onChange={(e) => {
               setHtcValue(e.target.value);
-              setIsTekkCorrect(true);
+              setIsHtcCorrect(true);
             }}
           />
           <h3>60</h3>
