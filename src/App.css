@@ -10,7 +10,8 @@ html {
 }
 
 .container {
-    margin: 5px;
+    margin: auto;
+    width: 500px;
 }
 
 .header {
