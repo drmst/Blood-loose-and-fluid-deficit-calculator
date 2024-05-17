@@ -70,14 +70,14 @@ function App() {
     fastingTime,
     operationSeverity,
   ]);
-
+  console.log(Tekk);
   return (
     <div className="container">
       <h1 className="header">Kan Kaybı ve Sıvı Açığı Hesaplama Aracı</h1>
       {isTekkCorrect ? (
         <div className="tekk-container">
           <h3 className="tekk-text">Tolere edilebilir kan kaybı:</h3>
-          <h3>{Math.floor(Tekk)}</h3>
+          <h3>{typeof Tekk === "number" ? Math.floor(Tekk) : Tekk}</h3>
         </div>
       ) : (
         <div className="tekk-error-container">
@@ -109,7 +109,6 @@ function App() {
         isHtcCorrect={isHtcCorrect}
       />
       <Weight
-      
         weight={weight}
         setWeight={setWeight}
         setIsWeightCorrect={setIsWeightCorrect}
@@ -128,11 +127,12 @@ function App() {
         isFastingCorrect={isFastingCorrect}
       />
       <p className="reminder">
-        Dr. Mesut Öztürk<a href="https://www.instagram.com/oztmesut/">(@oztmesut)</a> tarafından hazırlanmıştır.
+        Dr. Mesut Öztürk
+        <a href="https://www.instagram.com/oztmesut/">(@oztmesut)</a> tarafından
+        hazırlanmıştır.
         <br />
         Bilgi amaçlıdır. Hastaya göre tedavi kararı verilmelidir.
       </p>
-      
     </div>
   );
 }

@@ -39,7 +39,7 @@ const Asa = ({ asaValue, setAsaValue }) => {
             onChange={(e) => {
               setAsaValue(Number(e.target.value));
             }}
-          />{" "}
+          />
           ASA 3
         </label>
       </form>
