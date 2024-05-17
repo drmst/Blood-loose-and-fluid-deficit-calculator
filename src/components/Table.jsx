@@ -4,8 +4,9 @@ const Table = ({
   fluidDeficitPerHour,
   oneNightLiquidDeficit,
   operationSeverity,
+  isTableCorrect,
 }) => {
-  return (
+  return isTableCorrect ? (
     <div className="table-container">
       <h3 className="table-header">Sıvı Açığı:</h3>
       <table>
@@ -65,6 +66,12 @@ const Table = ({
           </tr>
         </tfoot>
       </table>
+    </div>
+  ) : (
+    <div className="table-error-container">
+      <p className="table-error">
+        Lütfen değerleri belirtilen aralıklarda giriniz !!!
+      </p>
     </div>
   );
 };

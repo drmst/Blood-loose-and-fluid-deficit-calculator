@@ -86,19 +86,14 @@ function App() {
           </p>
         </div>
       )}
-      {isTableCorrect ? (
+      
         <Table
+        isTableCorrect={isTableCorrect}
           fluidDeficitPerHour={fluidDeficitPerHour}
           oneNightLiquidDeficit={oneNightLiquidDeficit}
           operationSeverity={operationSeverity}
         />
-      ) : (
-        <div className="table-error-container">
-          <p className="table-error">
-            Lütfen değerleri belirtilen aralıklarda giriniz !!!
-          </p>
-        </div>
-      )}
+  
 
       <Asa asaValue={asaValue} setAsaValue={setAsaValue} />
       <Sex sex={sex} setSex={setSex} />
