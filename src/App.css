@@ -157,6 +157,7 @@ td {
 .htc-header input[type="number"] {
     font-size: 1rem;
     font-weight: 600;
+    max-width: 60px;
     border: 1px gray solid;
     text-align: center;
     border-radius: 5px;
@@ -183,6 +184,7 @@ td {
 .weight-header input[type="number"] {
     font-size: 1rem;
     font-weight: 600;
+    max-width: 60px;
     border: 1px gray solid;
     text-align: center;
     border-radius: 5px;
@@ -218,6 +220,7 @@ td {
 .operation-scale-header input[type="number"] {
     font-size: 1rem;
     font-weight: 600;
+    max-width: 60px;
     border: 1px gray solid;
     text-align: center;
     border-radius: 5px;
@@ -253,6 +256,7 @@ td {
 .fasting-header input[type="number"] {
     font-size: 1rem;
     font-weight: 600;
+    max-width: 60px;
     border: 1px rgb(128, 128, 128) solid;
     text-align: center;
     border-radius: 5px;
