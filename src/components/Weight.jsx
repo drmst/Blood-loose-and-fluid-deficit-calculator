@@ -1,7 +1,7 @@
 const Weight = ({ weight, setWeight, setIsWeightCorrect, isWeightCorrect }) => {
   const handleChange = (e) => {
     let value = parseInt(e.target.value);
-    if (isNaN(value) || value < 3 || value > 120) {
+    if (isNaN(value) || value < 3 || value > 150) {
       setIsWeightCorrect(false);
     } else {
       setIsWeightCorrect(true);
@@ -18,7 +18,7 @@ const Weight = ({ weight, setWeight, setIsWeightCorrect, isWeightCorrect }) => {
             className={isWeightCorrect ? "" : "input-error"}
             type="number"
             min="3"
-            max="120"
+            max="150"
             value={weight}
             onChange={handleChange}
           />
@@ -31,14 +31,14 @@ const Weight = ({ weight, setWeight, setIsWeightCorrect, isWeightCorrect }) => {
             id="weight"
             step="1"
             min="3"
-            max="120"
+            max="150"
             value={weight}
             onChange={(e) => {
               setWeight(e.target.value);
               setIsWeightCorrect(true);
             }}
           />
-          <h3>120</h3>
+          <h3>150</h3>
         </div>
       </label>
     </>

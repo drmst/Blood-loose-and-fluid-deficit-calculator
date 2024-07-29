@@ -1,7 +1,7 @@
 const Fasting = ({ fastingTime, setFastingTime, setIsFastingCorrect,isFastingCorrect }) => {
   const handleChange = (e) => {
     let value = parseInt(e.target.value);
-    if (isNaN(value) || value < 6 || value > 12) {
+    if (isNaN(value) || value < 0 || value > 12) {
       setIsFastingCorrect(false);
     } else {
       setIsFastingCorrect(true);
@@ -18,18 +18,18 @@ const Fasting = ({ fastingTime, setFastingTime, setIsFastingCorrect,isFastingCor
           <input
        className={isFastingCorrect ? "" : "input-error"}
             type="number"
-            min="6"
+            min="0"
             max="12"
             value={fastingTime}
             onChange={handleChange}
           />
         </div>
         <div className="fasting-slider-container">
-          <h3>6</h3>
+          <h3>0</h3>
           <input
             className="fasting-slider"
             type="range"
-            min="6"
+            min="0"
             max="12"
             value={fastingTime}
             onChange={(e) => {
